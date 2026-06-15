@@ -76,7 +76,6 @@ export function FaqFormSection() {
             </form>
             <div className="sm:col-span-2 rounded-2xl overflow-hidden relative min-h-[260px] hidden sm:block">
               <img src={formImg} alt="Dubai Marina" loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
             </div>
           </div>
         </Reveal>

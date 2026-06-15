@@ -26,7 +26,6 @@ export function OpportunitiesSection() {
           <div className="mt-10 rounded-2xl overflow-hidden border border-border bg-card shadow-lg grid md:grid-cols-12">
             <div className="md:col-span-4 relative min-h-[220px] md:min-h-0">
               <img src={oppImg} alt="Dubai Marina" loading="lazy" className="w-full h-full object-cover absolute inset-0" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-start text-primary-foreground">
                 <div className="text-[10px] uppercase tracking-wider text-gold mb-1">Featured</div>
                 <div className="text-sm font-bold">Dubai Marina Projects</div>

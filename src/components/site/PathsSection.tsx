@@ -39,7 +39,6 @@ export function PathsSection() {
                 </div>
                 <div className="relative h-44 sm:h-52 mx-3 mb-3 rounded-xl overflow-hidden">
                   <img src={c.img} alt={c.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.18_0.04_170/0.5)] to-transparent" />
                 </div>
               </div>
             </Reveal>
