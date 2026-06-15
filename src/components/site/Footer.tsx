@@ -6,7 +6,7 @@ import { WHATSAPP_URL, WHATSAPP_NUMBER, INSTAGRAM_URL, THREADS_URL, ADDRESS } fr
 export function Footer() {
   const { t } = useTranslation();
   return (
-    <footer className="bg-emerald-gradient text-primary-foreground pt-14 pb-24 lg:pb-12 mt-12">
+    <footer className="bg-emerald-gradient text-primary-foreground pt-14 pb-24 lg:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
