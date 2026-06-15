@@ -30,7 +30,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="lg:max-w-[58%]"
+          className="max-w-[58%] lg:max-w-[58%]"
         >
           <div className="text-xs sm:text-sm text-gold font-medium mb-4">
             {t("hero.eyebrow")}

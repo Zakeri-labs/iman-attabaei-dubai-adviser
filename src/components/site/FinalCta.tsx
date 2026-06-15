@@ -7,12 +7,11 @@ import { WHATSAPP_URL } from "@/lib/constants";
 export function FinalCta() {
   const { t } = useTranslation();
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={ctaImg} alt="Dubai skyline" loading="lazy" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r rtl:bg-gradient-to-l from-[oklch(0.18_0.04_170/0.96)] via-[oklch(0.22_0.04_175/0.85)] to-[oklch(0.22_0.04_175/0.55)]" />
-      </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 text-primary-foreground">
+    <section className="relative">
+      <img src={ctaImg} alt="Dubai skyline" loading="lazy" className="w-full h-auto block" />
+      <div className="absolute inset-0 bg-primary/10" />
+      <div className="absolute inset-0 flex items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 text-primary-foreground">
         <Reveal>
           <div className="max-w-3xl">
             <div className="text-xs sm:text-sm text-gold font-medium mb-3">{t("finalCta.eyebrow")}</div>
@@ -24,6 +23,7 @@ export function FinalCta() {
             </a>
           </div>
         </Reveal>
+      </div>
       </div>
     </section>
   );

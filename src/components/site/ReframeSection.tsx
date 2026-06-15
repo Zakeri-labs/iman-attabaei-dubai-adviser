@@ -25,8 +25,8 @@ export function ReframeSection() {
           {items.map((it, i) => (
             <Reveal key={it.n} delay={i * 0.1}>
               <div className="premium-card rounded-xl overflow-hidden h-full text-start">
-                <div className="overflow-hidden">
-                  <img src={it.img} alt={it.q} loading="lazy" className="w-full h-auto transition-transform duration-500 hover:scale-105" />
+                <div className="aspect-square overflow-hidden">
+                  <img src={it.img} alt={it.q} loading="lazy" className="w-full h-full object-contain transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="p-5">
                   <div className="text-xs font-bold text-gold mb-2">{it.n}</div>
