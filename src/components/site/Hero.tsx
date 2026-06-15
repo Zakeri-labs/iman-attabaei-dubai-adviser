@@ -16,7 +16,7 @@ export function Hero() {
         <img
           src={heroImg}
           alt="Iman Attabaei — Persian Dubai property advisor at his Sheikh Zayed Road office"
-          className="w-full h-full object-cover object-top opacity-55"
+          className={`w-full h-full object-cover object-top opacity-55 ${isRtl ? "scale-x-[-1]" : ""}`}
           width={1920}
           height={1080}
           fetchPriority="high"

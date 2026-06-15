@@ -27,10 +27,12 @@ export function PathsSection() {
         </Reveal>
 
         {/* Mobile horizontal scroll, desktop grid */}
-        <div className="mt-8 flex md:grid md:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-thin">
+        <div className="mt-8 -mx-4 px-4 md:mx-0 md:px-0">
+          <div className="overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-thin pb-4 md:pb-0">
+          <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 py-4 md:py-4">
           {cards.map((c, i) => (
-            <Reveal key={c.title} delay={i * 0.1} className="shrink-0 w-[78%] sm:w-[60%] md:w-auto snap-start">
-              <div className="group rounded-2xl bg-white/[0.04] border border-gold/20 hover:border-gold/60 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl text-start h-full backdrop-blur-sm">
+            <Reveal key={c.title} delay={i * 0.1} className="shrink-0 w-[78%] sm:w-[60%] md:w-auto snap-start relative hover:z-10">
+              <div className="group rounded-2xl bg-white/[0.04] border border-gold/20 hover:border-gold/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_24px_4px_oklch(0.84_0.15_85/0.3)] text-start h-full backdrop-blur-sm">
                 <div className="p-5 pb-3">
                   <h3 className="text-lg sm:text-xl font-bold">{c.title}</h3>
                   <p className="text-sm text-primary-foreground/70 mt-1">{c.desc}</p>
@@ -42,6 +44,8 @@ export function PathsSection() {
               </div>
             </Reveal>
           ))}
+          </div>
+          </div>
         </div>
 
         <Reveal delay={0.3}>
