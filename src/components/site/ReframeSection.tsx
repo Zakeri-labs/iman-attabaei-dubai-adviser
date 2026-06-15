@@ -1,13 +1,16 @@
 import { useTranslation } from "react-i18next";
-import { Target, Home as HomeIcon, Building2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal, SectionEyebrow } from "./Reveal";
+import img1 from "@/assets/1.jpg";
+import img2 from "@/assets/2.jpg";
+import img3 from "@/assets/3.jpg";
 
 export function ReframeSection() {
   const { t } = useTranslation();
   const items = [
-    { n: "1", icon: Target, q: t("reframe.q1") },
-    { n: "2", icon: HomeIcon, q: t("reframe.q2") },
-    { n: "3", icon: Building2, q: t("reframe.q3") },
+    { n: "1", img: img1, q: t("reframe.q1") },
+    { n: "2", img: img2, q: t("reframe.q2") },
+    { n: "3", img: img3, q: t("reframe.q3") },
   ];
   return (
     <section className="py-16 sm:py-20 bg-cream border-y border-border">
@@ -21,12 +24,12 @@ export function ReframeSection() {
         <div className="mt-10 grid sm:grid-cols-3 gap-4 sm:gap-5">
           {items.map((it, i) => (
             <Reveal key={it.n} delay={i * 0.1}>
-              <div className="premium-card rounded-xl p-5 sm:p-6 text-start flex items-start gap-4 h-full">
-                <div className="shrink-0 h-11 w-11 rounded-lg bg-primary/5 border border-primary/15 flex items-center justify-center text-primary">
-                  <it.icon className="h-5 w-5" />
+              <div className="premium-card rounded-xl overflow-hidden h-full text-start">
+                <div className="overflow-hidden">
+                  <img src={it.img} alt={it.q} loading="lazy" className="w-full h-auto transition-transform duration-500 hover:scale-105" />
                 </div>
-                <div className="flex-1">
-                  <div className="text-xs font-bold text-gold mb-1">{it.n}</div>
+                <div className="p-5">
+                  <div className="text-xs font-bold text-gold mb-2">{it.n}</div>
                   <p className="text-sm sm:text-base font-medium text-foreground leading-relaxed">{it.q}</p>
                 </div>
               </div>
