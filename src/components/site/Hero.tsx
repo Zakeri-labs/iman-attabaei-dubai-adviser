@@ -30,7 +30,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="max-w-[58%] lg:max-w-[58%]"
+          className="max-w-[85%] sm:max-w-[70%] lg:max-w-[58%]"
         >
           <div className="text-xs sm:text-sm text-gold font-medium mb-4">
             {t("hero.eyebrow")}
@@ -48,21 +48,21 @@ export function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md bg-gold text-ink font-semibold hover:bg-gold-soft transition-colors shadow-gold"
+              className="inline-flex items-center justify-center gap-2 h-12 px-3 sm:px-6 rounded-md bg-gold text-ink font-semibold hover:bg-gold-soft transition-colors shadow-gold whitespace-nowrap"
             >
               <MessageCircle className="h-4 w-4 shrink-0" />
               <span>{t("hero.cta")}</span>
             </a>
             <a
               href="#opportunities"
-              className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-md border border-gold/50 hover:bg-white/5 transition-colors font-medium"
+              className="inline-flex items-center justify-center gap-2 h-12 px-3 sm:px-6 rounded-md border border-gold/50 hover:bg-white/5 transition-colors font-medium whitespace-nowrap"
             >
               {t("hero.cta2")}
             </a>
           </div>
 
           {/* Trust row */}
-          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs text-primary-foreground/80">
+          <div className="mt-5 flex flex-col sm:flex-row sm:flex-wrap gap-x-5 gap-y-2 text-xs text-primary-foreground/80">
             <span className="inline-flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-gold" />{t("hero.trust1")}</span>
             <span className="inline-flex items-center gap-1.5"><Phone className="h-4 w-4 text-gold" />{t("hero.trust2")}</span>
             <span className="inline-flex items-center gap-1.5"><MapPin className="h-4 w-4 text-gold" />{t("hero.trust3")}</span>
