@@ -459,11 +459,11 @@ if (!i18n.isInitialized) {
         en: { translation: en },
         ar: { translation: ar },
       },
-      fallbackLng: "fa",
+      fallbackLng: "en",
       supportedLngs: ["fa", "en", "ar"],
       interpolation: { escapeValue: false },
       detection: {
-        order: ["localStorage", "navigator", "htmlTag"],
+        order: ["localStorage"],
         caches: ["localStorage"],
       },
     });
