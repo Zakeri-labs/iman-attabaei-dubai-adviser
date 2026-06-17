@@ -19,6 +19,8 @@ bun run format    # Prettier
 
 File-based routing via TanStack Router. All routes live in `src/routes/`. `routeTree.gen.ts` is **auto-generated** — never edit it manually. See `src/routes/README.md` for naming conventions.
 
+Each route can declare a `head()` function to override or extend the global meta tags defined in `src/routes/__root.tsx`.
+
 ### Page layout
 
 Every page wraps its content in `<SiteLayout>` (from `src/components/site/SiteLayout.tsx`), which provides `<Header>`, `<Footer>`, and `<MobileBottomNav>`. Importing `SiteLayout` also triggers the i18n initialization side effect via `@/i18n`.
@@ -27,15 +29,27 @@ Every page wraps its content in `<SiteLayout>` (from `src/components/site/SiteLa
 
 All translatable strings are defined inline in `src/i18n.ts` — three locales (`fa`, `en`, `ar`) all typed against the `fa` object. Persian (`fa`) is the default/fallback language. Add new copy to all three locales when updating strings.
 
-RTL languages are `fa` and `ar`. The `useDirection` hook (`src/hooks/useDirection.ts`) reads the active locale and sets `document.documentElement.dir` and `.lang` accordingly. Every page with `SiteLayout` gets this automatically.
+RTL languages are `fa` and `ar` (exported as `RTL_LANGS` from `src/i18n.ts`). The `useDirection` hook (`src/hooks/useDirection.ts`) reads the active locale and sets `document.documentElement.dir` and `.lang` accordingly. Every page with `SiteLayout` gets this automatically.
 
 ### Styling
 
 Tailwind CSS v4 with shadcn/ui (New York style, slate base color, `@/components/ui`). CSS variables defined in `src/styles.css`. Path alias `@/` maps to `src/`.
 
+**Typography:** Vazirmatn is loaded for Persian/RTL text; Inter is loaded for Latin/LTR. Both are imported from Google Fonts in `src/routes/__root.tsx`. A `text-gold` utility and `bg-gold` are used for accent decoration (see `SectionEyebrow` in `src/components/site/Reveal.tsx`).
+
+### Animation
+
+`src/components/site/Reveal.tsx` exports two reusable primitives:
+- `<Reveal delay={0}>` — framer-motion scroll-triggered fade-up, respects `prefers-reduced-motion`.
+- `<SectionEyebrow>` — gold-accented small-caps label used above section headings.
+
+Use these consistently across sections rather than writing one-off animation code.
+
 ### Vite config
 
 `@lovable.dev/vite-tanstack-config` bundles many plugins (TanStack Start, React, Tailwind, tsconfig paths, Nitro, etc.). **Do not add these plugins manually** in `vite.config.ts` — duplicates break the build.
+
+**Deployment:** defaults to Cloudflare Workers. When the `VERCEL` env var is set, switches to a Vercel Nitro preset automatically (configured in `vite.config.ts`).
 
 ### Contact / social constants
 
