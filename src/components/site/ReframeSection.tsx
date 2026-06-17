@@ -29,7 +29,9 @@ export function ReframeSection() {
                   <img src={it.img} alt={it.q} loading="lazy" className="w-full h-full object-contain transition-transform duration-500 hover:scale-105" />
                 </div>
                 <div className="p-5">
-                  <div className="text-xs font-bold text-gold mb-2">{it.n}</div>
+                  <div className="mb-3 inline-flex items-center justify-center h-9 w-9 rounded-full bg-gold text-ink text-sm font-bold shadow-gold">
+                    {it.n}
+                  </div>
                   <p className="text-sm sm:text-base font-medium text-foreground leading-relaxed">{it.q}</p>
                 </div>
               </div>
